@@ -27,6 +27,9 @@ package Programmers.Practice.Level1;
         테스트 24 〉	통과 (3.57ms, 75.6MB)
         테스트 25 〉	통과 (2.79ms, 76.2MB)
         테스트 26 〉	통과 (3.05ms, 71.5MB)
+        채점 결과
+        정확성: 100.0
+        합계: 100.0 / 100.0
 **/
 class Solution {
     public String solution(String new_id) {
