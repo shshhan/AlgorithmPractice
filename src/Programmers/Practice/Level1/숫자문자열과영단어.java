@@ -1,9 +1,5 @@
 package Programmers.Practice.Level1;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-
 /**
  * 2022.03.01
  * 정확성  테스트
