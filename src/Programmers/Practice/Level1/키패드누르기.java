@@ -26,47 +26,70 @@ package Programmers.Practice.Level1;
  * 채점 결과
  * 정확성 : 100.0
  * 합계 : 100.0 / 100.0
+ *
+ *
+ * 2022.03.02
+ * 정확성  테스트
+ * 테스트 1 〉	통과 (0.02ms, 72.2MB)
+ * 테스트 2 〉	통과 (0.04ms, 71.1MB)
+ * 테스트 3 〉	통과 (0.03ms, 74.1MB)
+ * 테스트 4 〉	통과 (0.05ms, 76.6MB)
+ * 테스트 5 〉	통과 (0.04ms, 68MB)
+ * 테스트 6 〉	통과 (0.05ms, 73.7MB)
+ * 테스트 7 〉	통과 (0.05ms, 80.4MB)
+ * 테스트 8 〉	통과 (0.05ms, 71.2MB)
+ * 테스트 9 〉	통과 (0.05ms, 76.3MB)
+ * 테스트 10 〉	통과 (0.05ms, 75.9MB)
+ * 테스트 11 〉	통과 (0.05ms, 72.5MB)
+ * 테스트 12 〉	통과 (0.04ms, 76.7MB)
+ * 테스트 13 〉	통과 (0.06ms, 74.4MB)
+ * 테스트 14 〉	통과 (0.09ms, 77.2MB)
+ * 테스트 15 〉	통과 (0.15ms, 74.6MB)
+ * 테스트 16 〉	통과 (0.18ms, 72.2MB)
+ * 테스트 17 〉	통과 (0.39ms, 69.2MB)
+ * 테스트 18 〉	통과 (0.26ms, 72.7MB)
+ * 테스트 19 〉	통과 (0.26ms, 75.5MB)
+ * 테스트 20 〉	통과 (0.26ms, 78MB)
+ * 채점 결과
+ * 정확성: 100.0
+ * 합계: 100.0 / 100.0
+ *
+ *
  */
 
 class Solution {
-    public String solution(int[] numbers, String hand) {
-        int currentL = 10;
-        int currentR = 12;
+    int currentL = 10;
+    int currentR = 12;
 
+    public String solution(int[] numbers, String hand) {
         StringBuilder sb = new StringBuilder();
 
         for(int i = 0; i<numbers.length; i++){
             switch(numbers[i]){
                 case 1: case 4: case 7:
-                    currentL = numbers[i];
+                    this.currentL = numbers[i];
                     sb.append("L");
-                    System.out.println(currentL + ", " + currentR);
                     break;
 
                 case 3: case 6: case 9:
-                    currentR = numbers[i];
+                    this.currentR = numbers[i];
                     sb.append("R");
-                    System.out.println(currentL + ", " + currentR);
                     break;
 
                 case 2: case 5: case 8: case 0:
-                    int whichHand = whichHand(numbers[i], currentL, currentR);
-                    if(whichHand > 0){
-                        currentR = numbers[i];
+                    int result = whichHand(numbers[i]);
+                    if(result > 0){
+                        this.currentR = numbers[i];
                         sb.append("R");
-                        System.out.println(currentL + ", " + currentR + ">>>>>>>>>>1");
-                    } else if (whichHand < 0){
-                        currentL = numbers[i];
+                    } else if (result < 0){
+                        this.currentL = numbers[i];
                         sb.append("L");
-                        System.out.println(currentL + ", " + currentR + ">>>>>>>>>>2");
                     } else if (hand.equals("right")) {
-                        currentR = numbers[i];
+                        this.currentR = numbers[i];
                         sb.append("R");
-                        System.out.println(currentL + ", " + currentR + ">>>>>>>>>>3");
                     } else {
-                        currentL = numbers[i];
+                        this.currentL = numbers[i];
                         sb.append("L");
-                        System.out.println(currentL + ", " + currentR + ">>>>>>>>>>4");
                     }
             }
         }
@@ -74,32 +97,17 @@ class Solution {
         String answer = sb.toString();
 
         return answer;
+
     }
-
-    public int whichHand(int number, int left, int right){
+    public int whichHand(int number){
         number = number == 0 ? 11 : number;
-        left = left == 0 ? 11 : left;
-        right = right == 0 ? 11 : right;
+        this.currentL = this.currentL == 0 ? 11 : this.currentL;
+        this.currentR = this.currentR == 0 ? 11 : this.currentR;
 
-        int[] targetLoc = new int[2];
-        int[] currentLLoc = new int[2];
-        int[] currentRLoc = new int[2];
-
-        for(int i = 0; i<2; i++){
-            if(i==0){
-                targetLoc[i] = (number - 1) /3;
-                currentLLoc[i] = (left - 1) /3;
-                currentRLoc[i] = (right -1) /3;
-            } else{
-                targetLoc[i] = (number -1) % 3;
-                currentLLoc[i] = (left -1) % 3;
-                currentRLoc[i] = (right -1) % 3;
-            }
-        }
-        int fromLeft = Math.abs(targetLoc[0]-currentLLoc[0]) + Math.abs(targetLoc[1]-currentLLoc[1]);
-        int fromRight = Math.abs(targetLoc[0]-currentRLoc[0]) + Math.abs(targetLoc[1]-currentRLoc[1]);
+        int fromLeft = Math.abs((number-1)/3 - (this.currentL-1)/3) + Math.abs((number-1)%3 - (this.currentL-1)%3);
+        int fromRight = Math.abs((number-1)/3 - (this.currentR-1)/3) + Math.abs((number-1)%3 - (this.currentR-1)%3);
 
         return fromLeft - fromRight;
-
     }
+
 }
