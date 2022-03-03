@@ -18,7 +18,7 @@ package Programmers.Practice.Level1;
  * 합계: 100.0 / 100.0
  */
 
-class Solution {
+class 숫자문자열과영단어 {
     public int solution(String s) {
         String[] engNum = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "zero"};
 

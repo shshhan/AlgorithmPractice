@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
  * 합계: 100.0 / 100.0
  */
 
-class Solution {
+class 로또최고최저순위 {
     public int[] solution(int[] lottos, int[] win_nums) {
         int zeroCnt = 0;
         int correctCnt = 0;

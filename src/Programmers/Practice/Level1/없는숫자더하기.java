@@ -11,13 +11,12 @@ package Programmers.Practice.Level1;
  * 테스트 6 〉	통과 (0.02ms, 74.5MB)
  * 테스트 7 〉	통과 (0.02ms, 75.3MB)
  * 테스트 8 〉	통과 (0.02ms, 75.1MB)
- * 테스트 9 〉	통과 (0.03ms, 77.4MB)
- * 채점 결과
+ * 테스트 9 〉	통과 (기
  * 정확성: 100.0
  * 합계: 100.0 / 100.0
  */
 
-class Solution {
+class 없는숫자더하기 {
     public int solution(int[] numbers) {
         int total = 45;
 

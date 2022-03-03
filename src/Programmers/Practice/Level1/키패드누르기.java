@@ -57,7 +57,7 @@ package Programmers.Practice.Level1;
  *
  */
 
-class Solution {
+class 키패드누르기 {
     int currentL = 10;
     int currentR = 12;
 

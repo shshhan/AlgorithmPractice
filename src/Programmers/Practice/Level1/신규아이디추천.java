@@ -31,7 +31,7 @@ package Programmers.Practice.Level1;
         정확성: 100.0
         합계: 100.0 / 100.0
 **/
-class Solution {
+class 신규아이디추천 {
     public String solution(String new_id) {
 
         new_id = new_id.toLowerCase();
