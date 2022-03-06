@@ -26,6 +26,10 @@ package Programmers.Practice.Level1;
  * 채점 결과
  * 정확성: 100.0
  * 합계: 100.0 / 100.0
+ *
+ * <배운점>
+ * 같은 로직일 경우 HashSet이 ArrayList보다 빠르다.
+ * 정렬시 Arrays.sort()보다 2중 for문으로 돌리는게 더 빠르다.
  */
 
 import java.util.HashSet;
