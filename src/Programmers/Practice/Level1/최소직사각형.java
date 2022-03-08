@@ -26,9 +26,38 @@ package Programmers.Practice.Level1;
  * 채점 결과
  * 정확성: 100.0
  * 합계: 100.0 / 100.0
+ *
+ *
+ * 성능개선!
+ * Arrays.stream.max().getAsInt() 등의 메서드 대신
+ * 단순 비교로 로직 변경 후 비약적인 속도 향상 성공
+ *
+ * 2022.03.08
+ * 정확성  테스트
+ * 테스트 1 〉	통과 (0.01ms, 73.4MB)
+ * 테스트 2 〉	통과 (0.01ms, 79.7MB)
+ * 테스트 3 〉	통과 (0.02ms, 75.3MB)
+ * 테스트 4 〉	통과 (0.02ms, 71.5MB)
+ * 테스트 5 〉	통과 (0.02ms, 68.6MB)
+ * 테스트 6 〉	통과 (0.02ms, 72.9MB)
+ * 테스트 7 〉	통과 (0.02ms, 74.4MB)
+ * 테스트 8 〉	통과 (0.02ms, 82.8MB)
+ * 테스트 9 〉	통과 (0.02ms, 72.1MB)
+ * 테스트 10 〉	통과 (0.03ms, 73.7MB)
+ * 테스트 11 〉	통과 (0.03ms, 77.7MB)
+ * 테스트 12 〉	통과 (0.05ms, 76.5MB)
+ * 테스트 13 〉	통과 (0.08ms, 74.8MB)
+ * 테스트 14 〉	통과 (0.23ms, 76.1MB)
+ * 테스트 15 〉	통과 (0.33ms, 82.5MB)
+ * 테스트 16 〉	통과 (0.56ms, 84.7MB)
+ * 테스트 17 〉	통과 (0.74ms, 78.6MB)
+ * 테스트 18 〉	통과 (0.72ms, 80.9MB)
+ * 테스트 19 〉	통과 (0.95ms, 93.4MB)
+ * 테스트 20 〉	통과 (1.31ms, 81.2MB)
+ * 채점 결과
+ * 정확성: 100.0
+ * 합계: 100.0 / 100.0
  */
-
-import java.util.Arrays;
 
 public class 최소직사각형 {
     public int solution(int[][] sizes) {
@@ -39,8 +68,13 @@ public class 최소직사각형 {
         int tempMin = 0;
 
         for (int[] eachSize : sizes){
-            tempMax = Arrays.stream(eachSize).max().getAsInt();
-            tempMin = Arrays.stream(eachSize).min().getAsInt();
+            if(eachSize[0] > eachSize[1]){
+                tempMax = eachSize[0];
+                tempMin = eachSize[1];
+            } else {
+                tempMax = eachSize[1];
+                tempMin = eachSize[0];
+            }
 
             if(max < tempMax){
                 max = tempMax;
