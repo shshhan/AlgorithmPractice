@@ -19,6 +19,7 @@ import java.util.Scanner;
  * 단어를 답으로 합니다.
  */
 public class 문장속단어 {
+
     /**
      * split 활용
      * Time : 150ms
@@ -27,14 +28,43 @@ public class 문장속단어 {
      */
     public static String solution1(String str) {
         String result = "";
-        int highestLength = 0;
+        int biggestLength = 0;
 
         String[] strAry = str.split(" ");
         for(String s : strAry) {
-            if(s.length() > highestLength) {
-                highestLength = s.length();
+            if(s.length() > biggestLength) {
+                biggestLength = s.length();
                 result = s;
             }
+        }
+
+        return result;
+    }
+
+    /**
+     * index of + substring 사용
+     * Time : 160ms
+     * @param str
+     * @return
+     */
+    public static String solution2(String str) {
+        String result = "";
+        int biggestLength = Integer.MIN_VALUE;
+        int pos;
+
+        while((pos = str.indexOf(" ")) != -1) {
+            String tempStr = str.substring(0, pos);
+
+            if(tempStr.length() > biggestLength) {
+                biggestLength = tempStr.length();
+                result = tempStr;
+            }
+
+            str = str.substring(pos+1);
+        }
+
+        if(str.length() > biggestLength) {
+            result = str;
         }
 
         return result;
@@ -45,6 +75,7 @@ public class 문장속단어 {
         String str = sc.nextLine();
 
         System.out.println(solution1(str));
+        System.out.println(solution2(str));
 
     }
 }
