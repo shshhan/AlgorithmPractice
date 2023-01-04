@@ -17,7 +17,7 @@ import java.util.Scanner;
  * 출력
  * 첫 줄에 대문자는 소문자로, 소문자는 대문자로 변환된 문자열을 출력합니다.
  */
-public class 대소문자변환 {
+public class b_대소문자변환 {
     /**
      * StringBuilder를 활용
      * Time : 148ms

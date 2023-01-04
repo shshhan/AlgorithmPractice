@@ -19,7 +19,7 @@ import java.util.Scanner;
  * 출력
  * 첫 줄에 해당 문자의 개수를 출력한다.
  */
-public class 문자찾기 {
+public class a_문자찾기 {
     public static int solution(String str, char c) {
         int count = 0;
         str = str.toLowerCase();

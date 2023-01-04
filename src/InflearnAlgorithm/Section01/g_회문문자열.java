@@ -20,7 +20,7 @@ import java.util.Scanner;
  * 출력
  * 첫 번째 줄에 회문 문자열인지의 결과를 YES 또는 NO로 출력합니다.
  */
-public class 회문문자열 {
+public class g_회문문자열 {
 
     /**
      * toCharArray() 활용

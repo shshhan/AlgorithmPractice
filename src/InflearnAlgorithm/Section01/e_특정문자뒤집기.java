@@ -17,7 +17,7 @@ import java.util.Scanner;
  * 출력
  * 첫 줄에 알파벳만 뒤집힌 문자열을 출력합니다.
  */
-public class 특정문자뒤집기 {
+public class e_특정문자뒤집기 {
 
     /**
      * Character.isAlphaabetic() 활용

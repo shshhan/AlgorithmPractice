@@ -19,7 +19,7 @@ import java.util.Scanner;
  * 출력
  * 첫 줄에 중복문자가 제거된 문자열을 출력합니다.
  */
-public class 중복문자제거 {
+public class f_중복문자제거 {
 
     /**
      * ArrayList를 순회하며 중복 조회
